@@ -25,6 +25,10 @@
 		DEA0345E18E874B200F031D5 /* MPInspectorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0345818E874B200F031D5 /* MPInspectorManager.m */; };
 		DEA0345F18E874B200F031D5 /* MPInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0345A18E874B200F031D5 /* MPInspectorViewController.m */; };
 		DEA0346018E874B200F031D5 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0345D18E874B200F031D5 /* UIView+Frame.m */; };
+		DEA0346318E8AFC100F031D5 /* MPObjectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0346218E8AFC100F031D5 /* MPObjectTableViewCell.m */; };
+		DEA0346718E8AFD500F031D5 /* MPRelatedObjectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0346618E8AFD500F031D5 /* MPRelatedObjectTableViewCell.m */; };
+		DEA0346A18E8AFEE00F031D5 /* MPMethodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0346918E8AFEE00F031D5 /* MPMethodTableViewCell.m */; };
+		DEA0346D18E8B30900F031D5 /* MPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0346C18E8B30900F031D5 /* MPTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,14 @@
 		DEA0345B18E874B200F031D5 /* MPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPUtils.h; sourceTree = "<group>"; };
 		DEA0345C18E874B200F031D5 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		DEA0345D18E874B200F031D5 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		DEA0346118E8AFC100F031D5 /* MPObjectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPObjectTableViewCell.h; sourceTree = "<group>"; };
+		DEA0346218E8AFC100F031D5 /* MPObjectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPObjectTableViewCell.m; sourceTree = "<group>"; };
+		DEA0346518E8AFD500F031D5 /* MPRelatedObjectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRelatedObjectTableViewCell.h; sourceTree = "<group>"; };
+		DEA0346618E8AFD500F031D5 /* MPRelatedObjectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPRelatedObjectTableViewCell.m; sourceTree = "<group>"; };
+		DEA0346818E8AFEE00F031D5 /* MPMethodTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMethodTableViewCell.h; sourceTree = "<group>"; };
+		DEA0346918E8AFEE00F031D5 /* MPMethodTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMethodTableViewCell.m; sourceTree = "<group>"; };
+		DEA0346B18E8B30900F031D5 /* MPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTableViewCell.h; sourceTree = "<group>"; };
+		DEA0346C18E8B30900F031D5 /* MPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,12 +185,28 @@
 				DEA0345818E874B200F031D5 /* MPInspectorManager.m */,
 				DEA0345918E874B200F031D5 /* MPInspectorViewController.h */,
 				DEA0345A18E874B200F031D5 /* MPInspectorViewController.m */,
+				DEA0346418E8AFC400F031D5 /* Cells */,
 				DEA0345B18E874B200F031D5 /* MPUtils.h */,
 				DEA0345C18E874B200F031D5 /* UIView+Frame.h */,
 				DEA0345D18E874B200F031D5 /* UIView+Frame.m */,
 			);
 			name = CuriousInspector;
 			path = ../CuriousInspector;
+			sourceTree = "<group>";
+		};
+		DEA0346418E8AFC400F031D5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DEA0346B18E8B30900F031D5 /* MPTableViewCell.h */,
+				DEA0346C18E8B30900F031D5 /* MPTableViewCell.m */,
+				DEA0346118E8AFC100F031D5 /* MPObjectTableViewCell.h */,
+				DEA0346218E8AFC100F031D5 /* MPObjectTableViewCell.m */,
+				DEA0346518E8AFD500F031D5 /* MPRelatedObjectTableViewCell.h */,
+				DEA0346618E8AFD500F031D5 /* MPRelatedObjectTableViewCell.m */,
+				DEA0346818E8AFEE00F031D5 /* MPMethodTableViewCell.h */,
+				DEA0346918E8AFEE00F031D5 /* MPMethodTableViewCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +313,10 @@
 				DEA0345F18E874B200F031D5 /* MPInspectorViewController.m in Sources */,
 				DEA0343818E8740500F031D5 /* MPViewController.m in Sources */,
 				DEA0345E18E874B200F031D5 /* MPInspectorManager.m in Sources */,
+				DEA0346718E8AFD500F031D5 /* MPRelatedObjectTableViewCell.m in Sources */,
+				DEA0346318E8AFC100F031D5 /* MPObjectTableViewCell.m in Sources */,
+				DEA0346A18E8AFEE00F031D5 /* MPMethodTableViewCell.m in Sources */,
+				DEA0346D18E8B30900F031D5 /* MPTableViewCell.m in Sources */,
 				DEA0342F18E8740500F031D5 /* MPAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,6 +534,7 @@
 				DEA0345218E8740500F031D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DEA0345318E8740500F031D5 /* Build configuration list for PBXNativeTarget "CuriosInspectorTestAppTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +543,7 @@
 				DEA0345518E8740500F031D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

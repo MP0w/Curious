@@ -78,6 +78,8 @@ void volumeListenerCallback (void *inClientData, AudioSessionPropertyID inID, UI
     
     UINavigationController *nav=[[UINavigationController alloc] initWithRootViewController:inspectorVC];
     
+    [nav.navigationBar setTintColor:[UIColor colorWithRed:1.000 green:0.462 blue:0.000 alpha:1.000]];
+    
     self.inspectorWindow=[[UIWindow alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     self.inspectorWindow.windowLevel = UIWindowLevelStatusBar-1;
     [self.inspectorWindow makeKeyAndVisible];
@@ -95,9 +97,8 @@ void volumeListenerCallback (void *inClientData, AudioSessionPropertyID inID, UI
 
 - (void)presentForApplication:(UIApplication *)application{
     
-    UIWindow *window=[[application delegate] window];
     
-    [self presentWithObjects:@[window]];
+    [self presentWithObjects:[application windows]];
 
 }
 

@@ -11,7 +11,6 @@
 
 #import "UIView+Frame.h"
 
-static NSString *const kTrackingId = @"UA-47741658-2";
 
 
 

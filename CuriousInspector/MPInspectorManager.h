@@ -10,6 +10,8 @@
 
 #define USE_VOLUME_CONTROL_TO_SHOW 1
 
+
+
 @interface MPInspectorManager : NSObject{
     
 }

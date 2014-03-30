@@ -20,9 +20,9 @@
      
         self.objects=objects;
         
-        [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:1.000 green:0.462 blue:0.000 alpha:1.000]];
+        [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:1.000 green:0.462 blue:0.000 alpha:1.000]];
 
-        self.title=NSStringFromClass([[objects objectAtIndex:0] class]);
+        self.title=NSStringFromClass([[objects firstObject] class]);
         self.view.tintColor=[UIColor colorWithRed:1.000 green:0.462 blue:0.000 alpha:1.000];
         
         
@@ -45,9 +45,6 @@
     
     [super viewDidLoad];
     
-    defaultAttributes=@{NSForegroundColorAttributeName : [UIColor colorWithRed:1.000 green:0.462 blue:0.000 alpha:1.000], NSFontAttributeName : [UIFont systemFontOfSize:17]};
-    normalAttributes=@{NSForegroundColorAttributeName : [UIColor colorWithWhite:0.117 alpha:1.000], NSFontAttributeName : [UIFont systemFontOfSize:17]};
-    hierarchyAttributes=@{NSForegroundColorAttributeName : [UIColor colorWithRed:0.019 green:0.694 blue:0.093 alpha:1.000], NSFontAttributeName : [UIFont systemFontOfSize:17]};
     
     tableView=[[UITableView alloc] initWithFrame:self.view.bounds];
     tableView.autoresizingMask=UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
@@ -103,69 +100,71 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView_ cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *identifier=@"Cell";
+    NSString *identifier=relatedObjectCellID;
     
-    UITableViewCell *cell=[tableView_ dequeueReusableCellWithIdentifier:identifier];
-    
-    if (!cell) {
-        cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        cell.textLabel.numberOfLines=0;
+    if (indexPath.row==0) {
+        identifier=objectCellID;
+    }else if (indexPath.row==[tableView_ numberOfRowsInSection:indexPath.section]-1){
+        identifier=methodCellID;
     }
     
-    cell.accessoryType=indexPath.row ? UITableViewCellAccessoryDisclosureIndicator : UITableViewCellAccessoryNone;
+     MPTableViewCell *cell=[tableView_ dequeueReusableCellWithIdentifier:identifier];
     
-    cell.selectionStyle=indexPath.row ? UITableViewCellSelectionStyleGray : UITableViewCellSelectionStyleNone;
+    if (!cell) {
+        
+        if (indexPath.row==0) {
+            cell=[[MPObjectTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }else if(indexPath.row==[tableView_ numberOfRowsInSection:indexPath.section]-1){
+            cell=[[MPTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:
+                  identifier];
+            cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+
+        }else{
+            cell=[[MPRelatedObjectTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+    }
     
+
     
     
     if (indexPath.row==0) {
+        
         id object=[[self objects] objectAtIndex:indexPath.section];
-        NSMutableAttributedString *attributedString=[[NSMutableAttributedString alloc] initWithString:[object description] attributes:normalAttributes];
 
-        [attributedString setAttributes:defaultAttributes range:[attributedString.string rangeOfString:NSStringFromClass([object class])]];
+        [cell setObjectClass:NSStringFromClass([object class])];
+        [cell setCellText:[object description]];
+        
+        
+    }else if (indexPath.row==[tableView_ numberOfRowsInSection:indexPath.section]-1){
 
-        NSRange framerange = [attributedString.string rangeOfString:@"frame = \\((.*?)\\)" options:NSRegularExpressionSearch | NSCaseInsensitiveSearch];
-        if(framerange.location != NSNotFound){
-            [attributedString setAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:0.236 green:0.517 blue:1.000 alpha:1.000], NSFontAttributeName : [UIFont systemFontOfSize:17]} range:framerange];
-        }
-        
-        cell.textLabel.attributedText=attributedString;
-        
-        
-    }else if (indexPath.row>0 && indexPath.row<[tableView_ numberOfRowsInSection:indexPath.section]-1){
-        
+        cell.textLabel.text=@"Methods";
+   
+    }else{
         
         NSInteger index=indexPath.row-1;
         id object=[self.objects objectAtIndex:indexPath.section];
         
+        cell.objectClass=NSStringFromClass([object class]);
 
         if ([object respondsToSelector:@selector(viewControllers)]) {
             
-            cell.textLabel.text=[NSString stringWithFormat:@"%i. %@",index,NSStringFromClass([[[(UINavigationController *) object viewControllers] objectAtIndex:index] class])];
+            cell.cellText=[NSString stringWithFormat:@"%i. %@",index,NSStringFromClass([[[(UINavigationController *) object viewControllers] objectAtIndex:index] class])];
             
         }else if ([object respondsToSelector:@selector(rootViewController)]) {
             
-            cell.textLabel.text=[NSString stringWithFormat:@"%i. %@",index,NSStringFromClass([[(UIWindow *)object rootViewController] class])];
+            cell.cellText=[NSString stringWithFormat:@"%i. %@",index,NSStringFromClass([[(UIWindow *)object rootViewController] class])];
             
         }else if ([object respondsToSelector:@selector(view)]) {
             
-            cell.textLabel.text=[NSString stringWithFormat:@"%i. %@",index,NSStringFromClass([[(UIViewController *)object view] class])];
+            cell.cellText=[NSString stringWithFormat:@"%i. %@",index,NSStringFromClass([[(UIViewController *)object view] class])];
             
         }else if ([object respondsToSelector:@selector(subviews)]) {
             
-            cell.textLabel.text=[NSString stringWithFormat:@"%i. %@",index,NSStringFromClass([[[(UIView *) object subviews] objectAtIndex:index] class])];
+            cell.cellText=[NSString stringWithFormat:@"%i. %@",index,NSStringFromClass([[[(UIView *) object subviews] objectAtIndex:index] class])];
             
         }
         
-        NSMutableAttributedString *attributedString=[[NSMutableAttributedString alloc] initWithString:cell.textLabel.text attributes:normalAttributes];
-
-        [attributedString addAttributes:hierarchyAttributes range:NSMakeRange(0, [attributedString.string rangeOfString:@". "].length+1)];
         
-        cell.textLabel.attributedText=attributedString;
-        
-        
-    }else{
-        cell.textLabel.text=@"Methods";
     }
 
     

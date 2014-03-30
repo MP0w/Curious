@@ -9,13 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "MPUtils.h"
 #import "MPInspectorManager.h"
+#import "MPObjectTableViewCell.h"
+#import "MPRelatedObjectTableViewCell.h"
+
+static NSString *objectCellID=@"objectCellID";
+static NSString *relatedObjectCellID=@"relatedObjectCellID";
+static NSString *methodCellID=@"methodCellID";
 
 @interface MPInspectorViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
     
     UITableView *tableView;
-    NSDictionary *defaultAttributes;
-    NSDictionary *normalAttributes;
-    NSDictionary *hierarchyAttributes;
 }
 
 @property (nonatomic,readwrite) NSArray *objects;
