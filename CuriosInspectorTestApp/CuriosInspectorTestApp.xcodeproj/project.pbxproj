@@ -1,0 +1,517 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DEA0341F18E8740500F031D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA0341E18E8740500F031D5 /* Foundation.framework */; };
+		DEA0342118E8740500F031D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA0342018E8740500F031D5 /* CoreGraphics.framework */; };
+		DEA0342318E8740500F031D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA0342218E8740500F031D5 /* UIKit.framework */; };
+		DEA0342918E8740500F031D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEA0342718E8740500F031D5 /* InfoPlist.strings */; };
+		DEA0342B18E8740500F031D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0342A18E8740500F031D5 /* main.m */; };
+		DEA0342F18E8740500F031D5 /* MPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0342E18E8740500F031D5 /* MPAppDelegate.m */; };
+		DEA0343218E8740500F031D5 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA0343018E8740500F031D5 /* Main_iPhone.storyboard */; };
+		DEA0343518E8740500F031D5 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA0343318E8740500F031D5 /* Main_iPad.storyboard */; };
+		DEA0343818E8740500F031D5 /* MPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0343718E8740500F031D5 /* MPViewController.m */; };
+		DEA0343A18E8740500F031D5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA0343918E8740500F031D5 /* Images.xcassets */; };
+		DEA0344118E8740500F031D5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA0344018E8740500F031D5 /* XCTest.framework */; };
+		DEA0344218E8740500F031D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA0341E18E8740500F031D5 /* Foundation.framework */; };
+		DEA0344318E8740500F031D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA0342218E8740500F031D5 /* UIKit.framework */; };
+		DEA0344B18E8740500F031D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEA0344918E8740500F031D5 /* InfoPlist.strings */; };
+		DEA0344D18E8740500F031D5 /* CuriosInspectorTestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0344C18E8740500F031D5 /* CuriosInspectorTestAppTests.m */; };
+		DEA0345E18E874B200F031D5 /* MPInspectorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0345818E874B200F031D5 /* MPInspectorManager.m */; };
+		DEA0345F18E874B200F031D5 /* MPInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0345A18E874B200F031D5 /* MPInspectorViewController.m */; };
+		DEA0346018E874B200F031D5 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0345D18E874B200F031D5 /* UIView+Frame.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DEA0344418E8740500F031D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEA0341318E8740500F031D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEA0341A18E8740500F031D5;
+			remoteInfo = CuriosInspectorTestApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DEA0341B18E8740500F031D5 /* CuriosInspectorTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuriosInspectorTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEA0341E18E8740500F031D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DEA0342018E8740500F031D5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DEA0342218E8740500F031D5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DEA0342618E8740500F031D5 /* CuriosInspectorTestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CuriosInspectorTestApp-Info.plist"; sourceTree = "<group>"; };
+		DEA0342818E8740500F031D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DEA0342A18E8740500F031D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DEA0342C18E8740500F031D5 /* CuriosInspectorTestApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CuriosInspectorTestApp-Prefix.pch"; sourceTree = "<group>"; };
+		DEA0342D18E8740500F031D5 /* MPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPAppDelegate.h; sourceTree = "<group>"; };
+		DEA0342E18E8740500F031D5 /* MPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPAppDelegate.m; sourceTree = "<group>"; };
+		DEA0343118E8740500F031D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		DEA0343418E8740500F031D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		DEA0343618E8740500F031D5 /* MPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPViewController.h; sourceTree = "<group>"; };
+		DEA0343718E8740500F031D5 /* MPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPViewController.m; sourceTree = "<group>"; };
+		DEA0343918E8740500F031D5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DEA0343F18E8740500F031D5 /* CuriosInspectorTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CuriosInspectorTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEA0344018E8740500F031D5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		DEA0344818E8740500F031D5 /* CuriosInspectorTestAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CuriosInspectorTestAppTests-Info.plist"; sourceTree = "<group>"; };
+		DEA0344A18E8740500F031D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DEA0344C18E8740500F031D5 /* CuriosInspectorTestAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CuriosInspectorTestAppTests.m; sourceTree = "<group>"; };
+		DEA0345718E874B200F031D5 /* MPInspectorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPInspectorManager.h; sourceTree = "<group>"; };
+		DEA0345818E874B200F031D5 /* MPInspectorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPInspectorManager.m; sourceTree = "<group>"; };
+		DEA0345918E874B200F031D5 /* MPInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPInspectorViewController.h; sourceTree = "<group>"; };
+		DEA0345A18E874B200F031D5 /* MPInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPInspectorViewController.m; sourceTree = "<group>"; };
+		DEA0345B18E874B200F031D5 /* MPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPUtils.h; sourceTree = "<group>"; };
+		DEA0345C18E874B200F031D5 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		DEA0345D18E874B200F031D5 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DEA0341818E8740500F031D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEA0342118E8740500F031D5 /* CoreGraphics.framework in Frameworks */,
+				DEA0342318E8740500F031D5 /* UIKit.framework in Frameworks */,
+				DEA0341F18E8740500F031D5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEA0343C18E8740500F031D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEA0344118E8740500F031D5 /* XCTest.framework in Frameworks */,
+				DEA0344318E8740500F031D5 /* UIKit.framework in Frameworks */,
+				DEA0344218E8740500F031D5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DEA0341218E8740500F031D5 = {
+			isa = PBXGroup;
+			children = (
+				DEA0345618E874B200F031D5 /* CuriousInspector */,
+				DEA0342418E8740500F031D5 /* CuriosInspectorTestApp */,
+				DEA0344618E8740500F031D5 /* CuriosInspectorTestAppTests */,
+				DEA0341D18E8740500F031D5 /* Frameworks */,
+				DEA0341C18E8740500F031D5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DEA0341C18E8740500F031D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DEA0341B18E8740500F031D5 /* CuriosInspectorTestApp.app */,
+				DEA0343F18E8740500F031D5 /* CuriosInspectorTestAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DEA0341D18E8740500F031D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEA0341E18E8740500F031D5 /* Foundation.framework */,
+				DEA0342018E8740500F031D5 /* CoreGraphics.framework */,
+				DEA0342218E8740500F031D5 /* UIKit.framework */,
+				DEA0344018E8740500F031D5 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEA0342418E8740500F031D5 /* CuriosInspectorTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				DEA0342D18E8740500F031D5 /* MPAppDelegate.h */,
+				DEA0342E18E8740500F031D5 /* MPAppDelegate.m */,
+				DEA0343018E8740500F031D5 /* Main_iPhone.storyboard */,
+				DEA0343318E8740500F031D5 /* Main_iPad.storyboard */,
+				DEA0343618E8740500F031D5 /* MPViewController.h */,
+				DEA0343718E8740500F031D5 /* MPViewController.m */,
+				DEA0343918E8740500F031D5 /* Images.xcassets */,
+				DEA0342518E8740500F031D5 /* Supporting Files */,
+			);
+			path = CuriosInspectorTestApp;
+			sourceTree = "<group>";
+		};
+		DEA0342518E8740500F031D5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DEA0342618E8740500F031D5 /* CuriosInspectorTestApp-Info.plist */,
+				DEA0342718E8740500F031D5 /* InfoPlist.strings */,
+				DEA0342A18E8740500F031D5 /* main.m */,
+				DEA0342C18E8740500F031D5 /* CuriosInspectorTestApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DEA0344618E8740500F031D5 /* CuriosInspectorTestAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				DEA0344C18E8740500F031D5 /* CuriosInspectorTestAppTests.m */,
+				DEA0344718E8740500F031D5 /* Supporting Files */,
+			);
+			path = CuriosInspectorTestAppTests;
+			sourceTree = "<group>";
+		};
+		DEA0344718E8740500F031D5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DEA0344818E8740500F031D5 /* CuriosInspectorTestAppTests-Info.plist */,
+				DEA0344918E8740500F031D5 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DEA0345618E874B200F031D5 /* CuriousInspector */ = {
+			isa = PBXGroup;
+			children = (
+				DEA0345718E874B200F031D5 /* MPInspectorManager.h */,
+				DEA0345818E874B200F031D5 /* MPInspectorManager.m */,
+				DEA0345918E874B200F031D5 /* MPInspectorViewController.h */,
+				DEA0345A18E874B200F031D5 /* MPInspectorViewController.m */,
+				DEA0345B18E874B200F031D5 /* MPUtils.h */,
+				DEA0345C18E874B200F031D5 /* UIView+Frame.h */,
+				DEA0345D18E874B200F031D5 /* UIView+Frame.m */,
+			);
+			name = CuriousInspector;
+			path = ../CuriousInspector;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DEA0341A18E8740500F031D5 /* CuriosInspectorTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEA0345018E8740500F031D5 /* Build configuration list for PBXNativeTarget "CuriosInspectorTestApp" */;
+			buildPhases = (
+				DEA0341718E8740500F031D5 /* Sources */,
+				DEA0341818E8740500F031D5 /* Frameworks */,
+				DEA0341918E8740500F031D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CuriosInspectorTestApp;
+			productName = CuriosInspectorTestApp;
+			productReference = DEA0341B18E8740500F031D5 /* CuriosInspectorTestApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DEA0343E18E8740500F031D5 /* CuriosInspectorTestAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEA0345318E8740500F031D5 /* Build configuration list for PBXNativeTarget "CuriosInspectorTestAppTests" */;
+			buildPhases = (
+				DEA0343B18E8740500F031D5 /* Sources */,
+				DEA0343C18E8740500F031D5 /* Frameworks */,
+				DEA0343D18E8740500F031D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DEA0344518E8740500F031D5 /* PBXTargetDependency */,
+			);
+			name = CuriosInspectorTestAppTests;
+			productName = CuriosInspectorTestAppTests;
+			productReference = DEA0343F18E8740500F031D5 /* CuriosInspectorTestAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DEA0341318E8740500F031D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MP;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "___FULLUSERNAME___";
+				TargetAttributes = {
+					DEA0343E18E8740500F031D5 = {
+						TestTargetID = DEA0341A18E8740500F031D5;
+					};
+				};
+			};
+			buildConfigurationList = DEA0341618E8740500F031D5 /* Build configuration list for PBXProject "CuriosInspectorTestApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DEA0341218E8740500F031D5;
+			productRefGroup = DEA0341C18E8740500F031D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DEA0341A18E8740500F031D5 /* CuriosInspectorTestApp */,
+				DEA0343E18E8740500F031D5 /* CuriosInspectorTestAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DEA0341918E8740500F031D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEA0343518E8740500F031D5 /* Main_iPad.storyboard in Resources */,
+				DEA0343A18E8740500F031D5 /* Images.xcassets in Resources */,
+				DEA0343218E8740500F031D5 /* Main_iPhone.storyboard in Resources */,
+				DEA0342918E8740500F031D5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEA0343D18E8740500F031D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEA0344B18E8740500F031D5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DEA0341718E8740500F031D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEA0346018E874B200F031D5 /* UIView+Frame.m in Sources */,
+				DEA0342B18E8740500F031D5 /* main.m in Sources */,
+				DEA0345F18E874B200F031D5 /* MPInspectorViewController.m in Sources */,
+				DEA0343818E8740500F031D5 /* MPViewController.m in Sources */,
+				DEA0345E18E874B200F031D5 /* MPInspectorManager.m in Sources */,
+				DEA0342F18E8740500F031D5 /* MPAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEA0343B18E8740500F031D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEA0344D18E8740500F031D5 /* CuriosInspectorTestAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DEA0344518E8740500F031D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEA0341A18E8740500F031D5 /* CuriosInspectorTestApp */;
+			targetProxy = DEA0344418E8740500F031D5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DEA0342718E8740500F031D5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEA0342818E8740500F031D5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DEA0343018E8740500F031D5 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEA0343118E8740500F031D5 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		DEA0343318E8740500F031D5 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEA0343418E8740500F031D5 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		DEA0344918E8740500F031D5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEA0344A18E8740500F031D5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DEA0344E18E8740500F031D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DEA0344F18E8740500F031D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DEA0345118E8740500F031D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CuriosInspectorTestApp/CuriosInspectorTestApp-Prefix.pch";
+				INFOPLIST_FILE = "CuriosInspectorTestApp/CuriosInspectorTestApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DEA0345218E8740500F031D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CuriosInspectorTestApp/CuriosInspectorTestApp-Prefix.pch";
+				INFOPLIST_FILE = "CuriosInspectorTestApp/CuriosInspectorTestApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DEA0345418E8740500F031D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CuriosInspectorTestApp.app/CuriosInspectorTestApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CuriosInspectorTestApp/CuriosInspectorTestApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CuriosInspectorTestAppTests/CuriosInspectorTestAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		DEA0345518E8740500F031D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CuriosInspectorTestApp.app/CuriosInspectorTestApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CuriosInspectorTestApp/CuriosInspectorTestApp-Prefix.pch";
+				INFOPLIST_FILE = "CuriosInspectorTestAppTests/CuriosInspectorTestAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DEA0341618E8740500F031D5 /* Build configuration list for PBXProject "CuriosInspectorTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEA0344E18E8740500F031D5 /* Debug */,
+				DEA0344F18E8740500F031D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEA0345018E8740500F031D5 /* Build configuration list for PBXNativeTarget "CuriosInspectorTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEA0345118E8740500F031D5 /* Debug */,
+				DEA0345218E8740500F031D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DEA0345318E8740500F031D5 /* Build configuration list for PBXNativeTarget "CuriosInspectorTestAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEA0345418E8740500F031D5 /* Debug */,
+				DEA0345518E8740500F031D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DEA0341318E8740500F031D5 /* Project object */;
+}
