@@ -79,7 +79,7 @@ void volumeListenerCallback (void *inClientData, AudioSessionPropertyID inID, UI
     UINavigationController *nav=[[UINavigationController alloc] initWithRootViewController:inspectorVC];
     
     self.inspectorWindow=[[UIWindow alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
-    self.inspectorWindow.windowLevel = UIWindowLevelAlert;
+    self.inspectorWindow.windowLevel = UIWindowLevelStatusBar-1;
     [self.inspectorWindow makeKeyAndVisible];
     
     [self.inspectorWindow setRootViewController:nav];

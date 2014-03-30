@@ -7,12 +7,19 @@
 //
 
 #import "MPAppDelegate.h"
+#import "MPInspectorManager.h"
 
 @implementation MPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+#if TARGET_IPHONE_SIMULATOR || __i386__
+
+    [MPInspectorManager present];
+
+#endif
     return YES;
 }
 							

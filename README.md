@@ -5,6 +5,8 @@ You are able to navigate from your main UIWindow inside your UINavigationControl
 
 Something similar to what  [Reveal](http://revealapp.com "Reveal") do from your Mac or [Cycript](http://www.cycript.org "Cycript") at command line, but directly in your app.
 
+![example](appSnapshot.png "image example")
+
 Usage
 -------------
 Import the folder CuriousInspector in your Xcode's project

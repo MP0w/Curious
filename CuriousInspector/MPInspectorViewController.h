@@ -13,6 +13,9 @@
 @interface MPInspectorViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
     
     UITableView *tableView;
+    NSDictionary *defaultAttributes;
+    NSDictionary *normalAttributes;
+    NSDictionary *hierarchyAttributes;
 }
 
 @property (nonatomic,readwrite) NSArray *objects;
