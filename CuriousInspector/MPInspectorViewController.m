@@ -114,6 +114,7 @@
         
         if (indexPath.row==0) {
             cell=[[MPObjectTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            
         }else if(indexPath.row==[tableView_ numberOfRowsInSection:indexPath.section]-1){
             cell=[[MPTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:
                   identifier];
@@ -130,7 +131,11 @@
     if (indexPath.row==0) {
         
         id object=[[self objects] objectAtIndex:indexPath.section];
-
+        if ([object respondsToSelector:@selector(frame)]) {
+            cell.imageView.image=[snapshotsCache objectForKey:[NSString stringWithFormat:@"%p",object]];
+            if(!cell.imageView.image)
+            cell.imageView.image=[self getSnapshotOfView:(UIView *)object];
+        }
         [cell setObjectClass:NSStringFromClass([object class])];
         [cell setCellText:[object description]];
         
@@ -212,5 +217,26 @@
     return NSStringFromClass([[self.objects objectAtIndex:section] class]);
 }
 
+
+- (UIImage *)getSnapshotOfView:(UIView *)view{
+    
+    UIGraphicsBeginImageContextWithOptions(view.frame.size,YES,0.0f);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [view.layer renderInContext:context];
+    UIImage *capturedScreen = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    if (!snapshotsCache) {
+        snapshotsCache=[[NSCache alloc] init];
+    }
+    
+    // put in a NSCache instead of a single UIImage ivar because we can have multiple objects in a single MPInspectorVC
+    if(capturedScreen)
+    [snapshotsCache setObject:capturedScreen forKey:[NSString stringWithFormat:@"%p",view]];
+    
+    MPLogHighlited(@"Cached %p",view);
+    
+    return capturedScreen;
+}
 
 @end

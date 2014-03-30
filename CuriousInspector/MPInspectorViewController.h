@@ -19,6 +19,7 @@ static NSString *methodCellID=@"methodCellID";
 @interface MPInspectorViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
     
     UITableView *tableView;
+    NSCache *snapshotsCache;
 }
 
 @property (nonatomic,readwrite) NSArray *objects;
