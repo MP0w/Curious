@@ -7,18 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MPUtils.h"
-#import "MPInspectorManager.h"
-#import "MPObjectTableViewCell.h"
-#import "MPRelatedObjectTableViewCell.h"
+#import "MPViewController.h"
+#import "MPMethodsListViewController.h"
 
-static NSString *objectCellID=@"objectCellID";
-static NSString *relatedObjectCellID=@"relatedObjectCellID";
-static NSString *methodCellID=@"methodCellID";
-
-@interface MPInspectorViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
+@interface MPInspectorViewController : MPViewController{
     
-    UITableView *tableView;
     NSCache *snapshotsCache;
 }
 

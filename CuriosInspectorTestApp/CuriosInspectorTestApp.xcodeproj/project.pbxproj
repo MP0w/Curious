@@ -29,6 +29,7 @@
 		DEA0346718E8AFD500F031D5 /* MPRelatedObjectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0346618E8AFD500F031D5 /* MPRelatedObjectTableViewCell.m */; };
 		DEA0346A18E8AFEE00F031D5 /* MPMethodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0346918E8AFEE00F031D5 /* MPMethodTableViewCell.m */; };
 		DEA0346D18E8B30900F031D5 /* MPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0346C18E8B30900F031D5 /* MPTableViewCell.m */; };
+		DEA0347018E9EC0F00F031D5 /* MPMethodsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0346F18E9EC0F00F031D5 /* MPMethodsListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		DEA0346918E8AFEE00F031D5 /* MPMethodTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMethodTableViewCell.m; sourceTree = "<group>"; };
 		DEA0346B18E8B30900F031D5 /* MPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTableViewCell.h; sourceTree = "<group>"; };
 		DEA0346C18E8B30900F031D5 /* MPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTableViewCell.m; sourceTree = "<group>"; };
+		DEA0346E18E9EC0F00F031D5 /* MPMethodsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMethodsListViewController.h; sourceTree = "<group>"; };
+		DEA0346F18E9EC0F00F031D5 /* MPMethodsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMethodsListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +188,8 @@
 				DEA0345818E874B200F031D5 /* MPInspectorManager.m */,
 				DEA0345918E874B200F031D5 /* MPInspectorViewController.h */,
 				DEA0345A18E874B200F031D5 /* MPInspectorViewController.m */,
+				DEA0346E18E9EC0F00F031D5 /* MPMethodsListViewController.h */,
+				DEA0346F18E9EC0F00F031D5 /* MPMethodsListViewController.m */,
 				DEA0346418E8AFC400F031D5 /* Cells */,
 				DEA0345B18E874B200F031D5 /* MPUtils.h */,
 				DEA0345C18E874B200F031D5 /* UIView+Frame.h */,
@@ -313,6 +318,7 @@
 				DEA0345F18E874B200F031D5 /* MPInspectorViewController.m in Sources */,
 				DEA0343818E8740500F031D5 /* MPViewController.m in Sources */,
 				DEA0345E18E874B200F031D5 /* MPInspectorManager.m in Sources */,
+				DEA0347018E9EC0F00F031D5 /* MPMethodsListViewController.m in Sources */,
 				DEA0346718E8AFD500F031D5 /* MPRelatedObjectTableViewCell.m in Sources */,
 				DEA0346318E8AFC100F031D5 /* MPObjectTableViewCell.m in Sources */,
 				DEA0346A18E8AFEE00F031D5 /* MPMethodTableViewCell.m in Sources */,

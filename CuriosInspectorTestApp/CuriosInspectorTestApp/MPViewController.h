@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MPUtils.h"
+#import "MPInspectorManager.h"
+#import "MPObjectTableViewCell.h"
+#import "MPRelatedObjectTableViewCell.h"
 
-@interface MPViewController : UIViewController
+static NSString *objectCellID=@"objectCellID";
+static NSString *relatedObjectCellID=@"relatedObjectCellID";
+static NSString *methodCellID=@"methodCellID";
+
+@interface MPViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
+    
+    UITableView *tableView;
+    
+}
 
 @end

@@ -19,11 +19,9 @@
     if (self=[super init]) {
      
         self.objects=objects;
-        
-        [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:1.000 green:0.462 blue:0.000 alpha:1.000]];
+
 
         self.title=NSStringFromClass([[objects firstObject] class]);
-        self.view.tintColor=[UIColor colorWithRed:1.000 green:0.462 blue:0.000 alpha:1.000];
         
         
     }
@@ -31,28 +29,6 @@
     return self;
 }
 
--(void)viewDidAppear:(BOOL)animated{
-
-    [super viewDidAppear:animated];
-    
-    UIBarButtonItem *button=[[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:[MPInspectorManager sharedManager] action:@selector(dismiss)];
-    
-    [self.navigationItem setRightBarButtonItem:button animated:YES];
-
-}
-
-- (void)viewDidLoad{
-    
-    [super viewDidLoad];
-    
-    
-    tableView=[[UITableView alloc] initWithFrame:self.view.bounds];
-    tableView.autoresizingMask=UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    tableView.dataSource=self;
-    tableView.delegate=self;
-    [self.view addSubview:tableView];
-    
-}
 
 
 #pragma mark - UITableView Delegate & DataSource
@@ -211,12 +187,20 @@
             objects = @[[[(UIView *) object subviews] objectAtIndex:index]];
             
         }
+        
+        
+        if (objects) {
+            MPInspectorViewController *detailVC=[[MPInspectorViewController alloc] initWithObjects:objects];
+            [self.navigationController pushViewController:detailVC animated:YES];
+        }
+        
+    }else if (indexPath.row==[tableView_ numberOfRowsInSection:indexPath.section]-1){
+        MPMethodsListViewController *methodsListVC=[[MPMethodsListViewController alloc] initWithObjects:[self.objects objectAtIndex:indexPath.section]];
+        [self.navigationController pushViewController:methodsListVC animated:YES];
+
     }
     
-    if (objects) {
-        MPInspectorViewController *detailVC=[[MPInspectorViewController alloc] initWithObjects:objects];
-        [self.navigationController pushViewController:detailVC animated:YES];
-    }
+
     
 }
 
