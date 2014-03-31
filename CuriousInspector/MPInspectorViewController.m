@@ -89,8 +89,14 @@
 - (CGFloat)tableView:(UITableView *)tableView_ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.row==0) {
-        NSString *text=[[[self objects] objectAtIndex:indexPath.section] description];
-        return [text sizeWithFont:[UIFont systemFontOfSize:17] constrainedToSize:CGSizeMake(tableView_.width-20, CGFLOAT_MAX)].height+20;
+        
+        id object=[[self objects] objectAtIndex:indexPath.section];
+        
+        NSString *text=[object description];
+        
+        UIImage *image=[snapshotsCache objectForKey:[NSString stringWithFormat:@"%p",object]];
+        
+        return [text sizeWithFont:[UIFont systemFontOfSize:17] constrainedToSize:CGSizeMake(tableView_.width-30, CGFLOAT_MAX)].height+30+(image!=nil ? (image.size.width>tableView_.width-200 ? (image.size.height/image.size.width)*(tableView_.width-200)+15 : image.size.height+15) : 0);
         
     }
     
@@ -132,9 +138,11 @@
         
         id object=[[self objects] objectAtIndex:indexPath.section];
         if ([object respondsToSelector:@selector(frame)]) {
-            cell.imageView.image=[snapshotsCache objectForKey:[NSString stringWithFormat:@"%p",object]];
-            if(!cell.imageView.image)
-            cell.imageView.image=[self getSnapshotOfView:(UIView *)object];
+            [(MPObjectTableViewCell *)cell setSnapshot:[snapshotsCache objectForKey:[NSString stringWithFormat:@"%p",object]]];
+            if(!cell.imageView.image){
+                [(MPObjectTableViewCell *)cell setSnapshot:[self getSnapshotOfView:(UIView *)object]];
+                [tableView_ reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
         }
         [cell setObjectClass:NSStringFromClass([object class])];
         [cell setCellText:[object description]];
@@ -220,7 +228,7 @@
 
 - (UIImage *)getSnapshotOfView:(UIView *)view{
     
-    UIGraphicsBeginImageContextWithOptions(view.frame.size,YES,0.0f);
+    UIGraphicsBeginImageContextWithOptions(view.frame.size,NO,0.0f);
     CGContextRef context = UIGraphicsGetCurrentContext();
     [view.layer renderInContext:context];
     UIImage *capturedScreen = UIGraphicsGetImageFromCurrentImageContext();

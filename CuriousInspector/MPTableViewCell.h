@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MPUtils.h"
 
 @interface MPTableViewCell : UITableViewCell
 

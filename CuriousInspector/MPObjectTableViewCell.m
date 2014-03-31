@@ -40,12 +40,53 @@
     }
     
     self.textLabel.attributedText=attributedString;
+    
+}
+
+
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    
+    if(snapshotView.image)
+        self.textLabel.height=snapshotView.y-15;
+
 }
 
 -(NSString *)cellText{
     return self.textLabel.attributedText.string;
 }
 
+-(void)setSnapshot:(UIImage *)snapshot{
+    
+    if(!snapshot){
+        
+        [snapshotView removeFromSuperview]; snapshotView=nil;
+        
+        return;
+    }
+    
+    if (!snapshotView) {
+        snapshotView=[[UIImageView alloc] initWithFrame:CGRectMake(15, self.height-15, self.width-30, 0)];
+        snapshotView.autoresizingMask=UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
+        snapshotView.layer.borderColor=[UIColor darkGrayColor].CGColor;
+        snapshotView.layer.borderWidth=.5;
+        [self addSubview:snapshotView];
+    }
+    
+    snapshotView.image=snapshot;
+    
+    CGSize imageScaled;
+    
+    
+    if(snapshot.size.width>self.width-200)
+        imageScaled=CGSizeMake(self.width-200, snapshot.size.height/snapshot.size.width*(self.width-200));
+    else imageScaled=snapshot.size;
+    
+    snapshotView.frame=CGRectMake((self.width-imageScaled.width)/2, self.height-15-imageScaled.height, imageScaled.width, imageScaled.height);
+}
 
+-(UIImage *)snapshot{
+    return snapshotView.image;
+}
 
 @end

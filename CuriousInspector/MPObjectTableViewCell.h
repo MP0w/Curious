@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "MPTableViewCell.h"
 
-@interface MPObjectTableViewCell : MPTableViewCell
+@interface MPObjectTableViewCell : MPTableViewCell{
+    
+    UIImageView *snapshotView;
+}
 
+@property (nonatomic,readwrite) UIImage *snapshot;
 
 @end
