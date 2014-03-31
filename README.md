@@ -40,7 +40,7 @@ Planned Features
 -----------------
 1. ~ Cells Design based on the cell type (object description, related objects,....)
 2. Every section will have that structure: First Cell : Object Description, n cells for related objects (tappable to navigate in the hierarchy )  , List of properties/methods of the object and some kind of features to play with these methods with the Objective C runtime (For example change the textColor of a UILabel)
-3. ✔ <s>Get a snapshot of the selected object (to not be lost inside the hierarchy)</s>
+3. ✔ ~~Get a snapshot of the selected object (to not be lost inside the hierarchy)~~
 4. A mobile substrate tweak to use this everywhere on iOS
 5. ... lot of other ideas.
 
