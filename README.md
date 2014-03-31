@@ -33,14 +33,14 @@ What Inspired me?
 
 What's the progress ?
 -------------
-Actually it is a WIP project, I worked on it some minutes just as a test and contributors are well accepted! It actually show you a section in a UITableView for every object passed and show the object description in the first row and the related objects' descriptions in the other rows (viewController's of a UINavigation/TabbarController , subviews of a UIView....) just to navigate.
+Actually it is a WIP project, I worked on it some minutes/hours and I hope to find time for it, contributors are well accepted! It actually show you a section in a UITableView for every object passed and show the object description in the first row and the related objects' descriptions in the other rows (viewController's of a UINavigation/TabbarController , subviews of a UIView....) just to navigate.
 Obviosly that is just the basic, see the next paragraph for the planned features.
 
 Planned Features
 -----------------
-1. Cells Design based on the cell type (object description, related objects,....)
+1. ~ Cells Design based on the cell type (object description, related objects,....)
 2. Every section will have that structure: First Cell : Object Description, n cells for related objects (tappable to navigate in the hierarchy )  , List of properties/methods of the object and some kind of features to play with these methods with the Objective C runtime (For example change the textColor of a UILabel)
-3. Get a snapshot of the selected object (to not be lost inside the hierarchy)
+3. ✔ <s>Get a snapshot of the selected object (to not be lost inside the hierarchy)</s>
 4. A mobile substrate tweak to use this everywhere on iOS
 5. ... lot of other ideas.
 
