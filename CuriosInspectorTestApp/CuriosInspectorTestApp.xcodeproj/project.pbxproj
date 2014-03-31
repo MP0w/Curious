@@ -30,6 +30,7 @@
 		DEA0346A18E8AFEE00F031D5 /* MPMethodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0346918E8AFEE00F031D5 /* MPMethodTableViewCell.m */; };
 		DEA0346D18E8B30900F031D5 /* MPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0346C18E8B30900F031D5 /* MPTableViewCell.m */; };
 		DEA0347018E9EC0F00F031D5 /* MPMethodsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0346F18E9EC0F00F031D5 /* MPMethodsListViewController.m */; };
+		DEA0347318EA081600F031D5 /* NSObject+object_print.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0347218EA081600F031D5 /* NSObject+object_print.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		DEA0346C18E8B30900F031D5 /* MPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTableViewCell.m; sourceTree = "<group>"; };
 		DEA0346E18E9EC0F00F031D5 /* MPMethodsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMethodsListViewController.h; sourceTree = "<group>"; };
 		DEA0346F18E9EC0F00F031D5 /* MPMethodsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMethodsListViewController.m; sourceTree = "<group>"; };
+		DEA0347118EA081600F031D5 /* NSObject+object_print.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+object_print.h"; sourceTree = "<group>"; };
+		DEA0347218EA081600F031D5 /* NSObject+object_print.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+object_print.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +193,8 @@
 				DEA0345A18E874B200F031D5 /* MPInspectorViewController.m */,
 				DEA0346E18E9EC0F00F031D5 /* MPMethodsListViewController.h */,
 				DEA0346F18E9EC0F00F031D5 /* MPMethodsListViewController.m */,
+				DEA0347118EA081600F031D5 /* NSObject+object_print.h */,
+				DEA0347218EA081600F031D5 /* NSObject+object_print.m */,
 				DEA0346418E8AFC400F031D5 /* Cells */,
 				DEA0345B18E874B200F031D5 /* MPUtils.h */,
 				DEA0345C18E874B200F031D5 /* UIView+Frame.h */,
@@ -317,6 +322,7 @@
 				DEA0342B18E8740500F031D5 /* main.m in Sources */,
 				DEA0345F18E874B200F031D5 /* MPInspectorViewController.m in Sources */,
 				DEA0343818E8740500F031D5 /* MPViewController.m in Sources */,
+				DEA0347318EA081600F031D5 /* NSObject+object_print.m in Sources */,
 				DEA0345E18E874B200F031D5 /* MPInspectorManager.m in Sources */,
 				DEA0347018E9EC0F00F031D5 /* MPMethodsListViewController.m in Sources */,
 				DEA0346718E8AFD500F031D5 /* MPRelatedObjectTableViewCell.m in Sources */,

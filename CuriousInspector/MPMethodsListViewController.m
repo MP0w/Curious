@@ -41,6 +41,12 @@
     return self;
 }
 
+- (void)dealloc{
+    
+    free(methodsList);
+    
+}
+
 - (void)viewDidLoad{
     
     [super viewDidLoad];
@@ -49,6 +55,7 @@
     searchbar.delegate=self;
     
     tableView.tableHeaderView=searchbar;
+    
 }
 
 #pragma mark - UITableView Delegate & DataSource
@@ -58,9 +65,9 @@
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView_ numberOfRowsInSection:(NSInteger)section{
     
-    return methodsNames.count;
+    return [self arrayForTable:tableView_].count;
     
 }
 
@@ -79,20 +86,20 @@
         cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:methodCellID];
     }
     
-    char name[20];
+    char *type=method_copyReturnType(methodsList[indexPath.row]);
     
-    method_getReturnType(methodsList[indexPath.row], name, 20);
+    NSAttributedString *returnTypeString=[[NSAttributedString alloc] initWithString:[NSObject codeToReadableType:type] attributes:returnTypeAttributes];
     
-    struct objc_method_description desc=*method_getDescription(methodsList[indexPath.row]);
-
     
-    NSString *methodName=[NSString stringWithFormat:@"%s %@",name,[methodsNames objectAtIndex:indexPath.row]];
+    NSMutableAttributedString *attributedString=[[NSMutableAttributedString alloc] initWithString:@"- ()" attributes:normalAttributes];
     
-    NSMutableAttributedString *attributedString=[[NSMutableAttributedString alloc] initWithString:methodName attributes:normalAttributes];
-    
+    [attributedString insertAttributedString:returnTypeString atIndex:3];
+    [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:[[self arrayForTable:tableView_] objectAtIndex:indexPath.row] attributes:detailAttributes]];
     cell.textLabel.attributedText=attributedString;
     
     cell.detailTextLabel.text=[NSString stringWithFormat:@"Number of Arguments: %i",method_getNumberOfArguments(methodsList[indexPath.row])];
+
+    free(type);
     
     return cell;
 }
@@ -100,6 +107,38 @@
 - (void)tableView:(UITableView *)tableView_ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+    
+    searchDisplayController=[[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
+    
+    searchDisplayController.searchResultsTableView.delegate=self;
+    searchDisplayController.searchResultsTableView.dataSource=self;
+    searchDisplayController.delegate=self;
+
+    [searchDisplayController setActive:YES animated:YES];
+}
+
+-(void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller{
+    [searchDisplayController setActive:NO animated:YES];
+    searchDisplayController=nil;
+}
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    
+    NSArray *tmp=[methodsNames filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@"SELF CONTAINS[c] '%@'",searchText]]];
+    filteredArray=tmp;
+    [searchDisplayController.searchResultsTableView reloadData];
+}
+
+
+
+- (NSArray *)arrayForTable:(UITableView *)table{
+    
+    if (table==tableView) {
+        return methodsNames;
+    }else return filteredArray;
 }
 
 @end

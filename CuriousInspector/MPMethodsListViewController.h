@@ -8,15 +8,20 @@
 
 #import "MPViewController.h"
 #import <objc/runtime.h>
+#import "NSObject+object_print.h"
 
-@interface MPMethodsListViewController : MPViewController<UISearchBarDelegate>{
+@interface MPMethodsListViewController : MPViewController<UISearchBarDelegate,UISearchDisplayDelegate>{
     
     NSMutableArray *methodsNames;
     Method *methodsList;
     
+    NSArray *filteredArray;
+    
     NSDictionary * detailAttributes;
     NSDictionary *normalAttributes;
     NSDictionary *returnTypeAttributes;
+    
+    UISearchDisplayController *searchDisplayController;
     
 }
 
