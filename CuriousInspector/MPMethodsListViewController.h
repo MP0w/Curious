@@ -13,7 +13,6 @@
 @interface MPMethodsListViewController : MPViewController<UISearchBarDelegate,UISearchDisplayDelegate>{
     
     NSMutableArray *methodsNames;
-    Method *methodsList;
     
     NSArray *filteredArray;
     

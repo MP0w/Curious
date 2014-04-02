@@ -10,6 +10,8 @@
 
 // Thanks to http://codethink.no-ip.org/wordpress/archives/236
 
+// ...and based on https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html#//apple_ref/doc/uid/TP40008048-CH100-SW1
+
 @implementation NSObject(object_print)
 
 + (NSString*) appendTo: (NSString*) base with: (NSString*) rest {
@@ -131,7 +133,10 @@
                 }
                 else {
                     //all we know is that it's an object of some kind
-                    result = [self appendTo: @"NSObject*" with: result];
+                    //result = [self appendTo: @"NSObject*" with: result];
+                    
+                    // MPOW : I prefer just id, more readable method in our cells
+                    result = [self appendTo:@"id" with:result];
                 }
                 break;
             }
