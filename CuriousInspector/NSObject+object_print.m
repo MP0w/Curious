@@ -142,24 +142,11 @@
             }
             case '{': {
                 //struct, we don't fully process these; just echo them
-                index++;
-                int numBraces = 1;
-                NSString* theType = @"{";
-                while (numBraces > 0) {
-                    char next = [codeString characterAtIndex:index];
-                    theType = [NSString stringWithFormat:@"%@%c", theType, next];
-                    if (next == '{') {
-                        numBraces++;
-                    }
-                    else if (next == '}') {
-                        numBraces--;
-                    }
-                    
-                    index++;
-                }
-                result = [NSString stringWithFormat:@"struct %@%@", theType, result];
-                
-                index--;
+                NSRange structrange = [codeString rangeOfString:@"="];
+                if(structrange.location == NSNotFound)
+                    result = [self appendTo: @"struct" with: result];
+                else   result = [self appendTo: [codeString substringWithRange:NSMakeRange(1, structrange.location-1)] with: result];
+                return result;
                 break;
             }
             case '?':
