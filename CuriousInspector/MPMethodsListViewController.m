@@ -14,6 +14,7 @@
 
 static NSString *nameKey = @"methodName";
 static NSString *methodKey = @"method";
+static NSString *methodType =@"type";
 
 @implementation MPMethodsListViewController
 
@@ -24,14 +25,20 @@ static NSString *methodKey = @"method";
 
         self.title=NSStringFromClass([object class]);
 
+        unsigned int classMethodCount;
         unsigned int count;
         
+        Method *classMethodsList = class_copyMethodList(objc_getMetaClass([NSStringFromClass([object class]) UTF8String]), &classMethodCount);
+
         Method *methodsList = class_copyMethodList([object class], &count);
 
         methodsNames=[[NSMutableArray alloc] init];
-        
+
+        for (NSUInteger i=0; i<classMethodCount; i++) {
+            [methodsNames addObject:@{nameKey: NSStringFromSelector(method_getName(classMethodsList[i])),methodKey:[NSValue valueWithPointer:classMethodsList[i]],methodType : @(MPClassMethod)}];
+        }
         for (NSUInteger i=0; i<count; i++) {
-            [methodsNames addObject:@{nameKey: NSStringFromSelector(method_getName(methodsList[i])),methodKey:[NSValue valueWithPointer:methodsList[i]]}];
+            [methodsNames addObject:@{nameKey: NSStringFromSelector(method_getName(methodsList[i])),methodKey:[NSValue valueWithPointer:methodsList[i]],methodType : @(MPInstanceMethod)}];
         }
         
         returnTypeAttributes=@{NSForegroundColorAttributeName : [UIColor colorWithRed:1.000 green:0.462 blue:0.000 alpha:1.000], NSFontAttributeName : [UIFont systemFontOfSize:17]};
@@ -40,6 +47,10 @@ static NSString *methodKey = @"method";
         
         
         free(methodsList);
+        free(classMethodsList);
+
+        
+        
 
     }
     return self;
@@ -86,18 +97,19 @@ static NSString *methodKey = @"method";
         cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:methodCellID];
     }
     
+    NSDictionary *methodDict=[[self arrayForTable:tableView_] objectAtIndex:indexPath.row];
     
-    Method currentMethod=[(NSValue *)[[[self arrayForTable:tableView_] objectAtIndex:indexPath.row] objectForKey:methodKey] pointerValue];
+    Method currentMethod=[(NSValue *)[methodDict objectForKey:methodKey] pointerValue];
     
     char *type=method_copyReturnType(currentMethod);
     
     NSAttributedString *returnTypeString=[[NSAttributedString alloc] initWithString:[NSObject codeToReadableType:type] attributes:returnTypeAttributes];
     
     
-    NSMutableAttributedString *attributedString=[[NSMutableAttributedString alloc] initWithString:@"- ()" attributes:normalAttributes];
+    NSMutableAttributedString *attributedString=[[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ ()",[[methodDict objectForKey:methodType] integerValue]== MPClassMethod ? @"+" : @"-" ] attributes:normalAttributes];
     
     [attributedString insertAttributedString:returnTypeString atIndex:3];
-    [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:[[[self arrayForTable:tableView_] objectAtIndex:indexPath.row] objectForKey:nameKey] attributes:detailAttributes]];
+    [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:[methodDict objectForKey:nameKey] attributes:detailAttributes]];
     cell.textLabel.attributedText=attributedString;
     
     cell.detailTextLabel.text=[NSString stringWithFormat:@"Number of Arguments: %i",method_getNumberOfArguments(currentMethod)];

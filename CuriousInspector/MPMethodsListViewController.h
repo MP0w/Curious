@@ -10,6 +10,11 @@
 #import <objc/runtime.h>
 #import "NSObject+object_print.h"
 
+typedef enum : NSUInteger {
+    MPClassMethod,
+    MPInstanceMethod,
+} MPMethodType;
+
 @interface MPMethodsListViewController : MPViewController<UISearchBarDelegate,UISearchDisplayDelegate>{
     
     NSMutableArray *methodsNames;
