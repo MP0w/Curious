@@ -22,6 +22,8 @@ static NSString *methodType =@"type";
     
     self = [super init];
     if (self) {
+        
+        self.object=object;
 
         self.title=NSStringFromClass([object class]);
 
@@ -95,6 +97,7 @@ static NSString *methodType =@"type";
     
     if (!cell) {
         cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:methodCellID];
+        cell.detailTextLabel.adjustsFontSizeToFitWidth=YES;
     }
     
     NSDictionary *methodDict=[[self arrayForTable:tableView_] objectAtIndex:indexPath.row];
@@ -112,7 +115,14 @@ static NSString *methodType =@"type";
     [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:[methodDict objectForKey:nameKey] attributes:detailAttributes]];
     cell.textLabel.attributedText=attributedString;
     
-    cell.detailTextLabel.text=[NSString stringWithFormat:@"Number of Arguments: %i",method_getNumberOfArguments(currentMethod)];
+    NSUInteger numberOfArguments=method_getNumberOfArguments(currentMethod);
+    NSString *detailString=[NSString stringWithFormat:@"Number of Arguments: %i ",numberOfArguments-2];
+    
+    for (NSUInteger i=2; i<numberOfArguments; i++) {
+        detailString=[detailString stringByAppendingString:[NSString stringWithFormat:@" / (%@)",[NSObject codeToReadableType:method_copyArgumentType(currentMethod, i)]]];
+    }
+         
+    cell.detailTextLabel.text=detailString;
 
     free(type);
     
@@ -120,6 +130,35 @@ static NSString *methodType =@"type";
 }
 
 - (void)tableView:(UITableView *)tableView_ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [tableView_ deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSDictionary *methodDict=[[self arrayForTable:tableView_] objectAtIndex:indexPath.row];
+
+    Method currentMethod=[(NSValue *)[methodDict objectForKey:methodKey] pointerValue];
+    
+    char *type=method_copyReturnType(currentMethod);
+
+    id sender=([[methodDict objectForKey:methodType] integerValue]== MPClassMethod) ? [[self object] class] : self.object;
+
+        
+    NSString *returnTypeString=[NSObject codeToReadableType:type];
+
+    if ([returnTypeString isEqualToString:@"id"]) {
+        
+        id returnedValue = (objc_msgSend(sender, method_getName([[methodDict objectForKey:methodKey] pointerValue])));
+
+        [[[UIAlertView alloc] initWithTitle:@"Returned Value" message:[returnedValue description] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+        MPLogHighlited(@"return %@",returnedValue);
+        
+    }else if ([returnTypeString isEqualToString:@"void"]){
+        objc_msgSend(sender, method_getName([[methodDict objectForKey:methodKey] pointerValue]));
+
+    }else if (type[0]=='{'){
+        objc_msgSend_stret(sender, method_getName([[methodDict objectForKey:methodKey] pointerValue]));
+    }else{
+        objc_msgSend_fpret(sender, method_getName([[methodDict objectForKey:methodKey] pointerValue]));
+    }
     
     
 }

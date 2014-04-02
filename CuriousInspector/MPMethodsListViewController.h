@@ -8,6 +8,7 @@
 
 #import "MPViewController.h"
 #import <objc/runtime.h>
+#import <objc/message.h>
 #import "NSObject+object_print.h"
 
 typedef enum : NSUInteger {
@@ -27,7 +28,11 @@ typedef enum : NSUInteger {
     
     UISearchDisplayController *searchDisplayController;
     
+    
 }
+
+@property (nonatomic,assign)     id object;
+
 
 - (instancetype)initWithObjects:(NSObject *)object;
 
