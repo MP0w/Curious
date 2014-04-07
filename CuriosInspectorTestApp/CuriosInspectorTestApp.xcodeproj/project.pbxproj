@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE2A263118F33E5000A57B5B /* MPMessageSenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2A262E18F33E5000A57B5B /* MPMessageSenderViewController.m */; };
+		DE2A263218F33E5000A57B5B /* UIAlertView+blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2A263018F33E5000A57B5B /* UIAlertView+blocks.m */; };
 		DEA0341F18E8740500F031D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA0341E18E8740500F031D5 /* Foundation.framework */; };
 		DEA0342118E8740500F031D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA0342018E8740500F031D5 /* CoreGraphics.framework */; };
 		DEA0342318E8740500F031D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA0342218E8740500F031D5 /* UIKit.framework */; };
@@ -44,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE2A262D18F33E5000A57B5B /* MPMessageSenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMessageSenderViewController.h; sourceTree = "<group>"; };
+		DE2A262E18F33E5000A57B5B /* MPMessageSenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMessageSenderViewController.m; sourceTree = "<group>"; };
+		DE2A262F18F33E5000A57B5B /* UIAlertView+blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+blocks.h"; sourceTree = "<group>"; };
+		DE2A263018F33E5000A57B5B /* UIAlertView+blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+blocks.m"; sourceTree = "<group>"; };
 		DEA0341B18E8740500F031D5 /* CuriosInspectorTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuriosInspectorTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA0341E18E8740500F031D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DEA0342018E8740500F031D5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -193,6 +199,10 @@
 				DEA0345A18E874B200F031D5 /* MPInspectorViewController.m */,
 				DEA0346E18E9EC0F00F031D5 /* MPMethodsListViewController.h */,
 				DEA0346F18E9EC0F00F031D5 /* MPMethodsListViewController.m */,
+				DE2A262D18F33E5000A57B5B /* MPMessageSenderViewController.h */,
+				DE2A262E18F33E5000A57B5B /* MPMessageSenderViewController.m */,
+				DE2A262F18F33E5000A57B5B /* UIAlertView+blocks.h */,
+				DE2A263018F33E5000A57B5B /* UIAlertView+blocks.m */,
 				DEA0347118EA081600F031D5 /* NSObject+object_print.h */,
 				DEA0347218EA081600F031D5 /* NSObject+object_print.m */,
 				DEA0346418E8AFC400F031D5 /* Cells */,
@@ -321,6 +331,7 @@
 				DEA0346018E874B200F031D5 /* UIView+Frame.m in Sources */,
 				DEA0342B18E8740500F031D5 /* main.m in Sources */,
 				DEA0345F18E874B200F031D5 /* MPInspectorViewController.m in Sources */,
+				DE2A263118F33E5000A57B5B /* MPMessageSenderViewController.m in Sources */,
 				DEA0343818E8740500F031D5 /* MPViewController.m in Sources */,
 				DEA0347318EA081600F031D5 /* NSObject+object_print.m in Sources */,
 				DEA0345E18E874B200F031D5 /* MPInspectorManager.m in Sources */,
@@ -330,6 +341,7 @@
 				DEA0346A18E8AFEE00F031D5 /* MPMethodTableViewCell.m in Sources */,
 				DEA0346D18E8B30900F031D5 /* MPTableViewCell.m in Sources */,
 				DEA0342F18E8740500F031D5 /* MPAppDelegate.m in Sources */,
+				DE2A263218F33E5000A57B5B /* UIAlertView+blocks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
