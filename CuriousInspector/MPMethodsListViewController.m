@@ -59,7 +59,6 @@ static NSString *methodType =@"type";
 }
 
 
-
 - (void)viewDidLoad{
     
     [super viewDidLoad];
@@ -137,29 +136,54 @@ static NSString *methodType =@"type";
 
     Method currentMethod=[(NSValue *)[methodDict objectForKey:methodKey] pointerValue];
     
-    char *type=method_copyReturnType(currentMethod);
+    NSUInteger numberOfArguments=method_getNumberOfArguments(currentMethod);
 
-    id sender=([[methodDict objectForKey:methodType] integerValue]== MPClassMethod) ? [[self object] class] : self.object;
+    if(numberOfArguments-2>0){
+        
+        MPMessageSenderViewController* messageSenderVC=[[MPMessageSenderViewController alloc] initWithClass:[self.object class] method:currentMethod methodType:[[methodDict objectForKey:methodType] integerValue]];
+        messageSenderVC.method=currentMethod;
+        [self.navigationController pushViewController:messageSenderVC animated:YES];
+        
+        
+    }else{ // I will see later, during the creation of MPMessageSenderViewController
 
         
-    NSString *returnTypeString=[NSObject codeToReadableType:type];
-
-    if ([returnTypeString isEqualToString:@"id"]) {
         
-        id returnedValue = (objc_msgSend(sender, method_getName([[methodDict objectForKey:methodKey] pointerValue])));
-
-        [[[UIAlertView alloc] initWithTitle:@"Returned Value" message:[returnedValue description] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
-        MPLogHighlited(@"return %@",returnedValue);
-        
-    }else if ([returnTypeString isEqualToString:@"void"]){
-        objc_msgSend(sender, method_getName([[methodDict objectForKey:methodKey] pointerValue]));
-
-    }else if (type[0]=='{'){
-        objc_msgSend_stret(sender, method_getName([[methodDict objectForKey:methodKey] pointerValue]));
-    }else{
-        objc_msgSend_fpret(sender, method_getName([[methodDict objectForKey:methodKey] pointerValue]));
+//        char *type=method_copyReturnType(currentMethod);
+//        
+//        
+//        if (numberOfArguments-2>0) {
+//            MPMessageSenderViewController * messageSender=[[MPMessageSenderViewController alloc] init];
+//            messageSender.method=currentMethod;
+//            [self.navigationController pushViewController:messageSender animated:YES];
+//        }else{
+//
+//            id sender=([[methodDict objectForKey:methodType] integerValue]== MPClassMethod) ? [[self object] class] : self.object;
+//
+//                
+//            NSString *returnTypeString=[NSObject codeToReadableType:type];
+//
+//            if ([returnTypeString isEqualToString:@"id"]) {
+//                
+//                id returnedValue = (objc_msgSend(sender, method_getName([[methodDict objectForKey:methodKey] pointerValue])));
+//
+//                [[[UIAlertView alloc] initWithTitle:@"Returned Value" message:[returnedValue description] complentionBlock:^(NSInteger clickedButton) {
+//                
+//                    
+//                } cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue"]show];
+//                MPLogHighlited(@"return %@",returnedValue);
+//                
+//            }else if ([returnTypeString isEqualToString:@"void"]){
+//                objc_msgSend(sender, method_getName([[methodDict objectForKey:methodKey] pointerValue]));
+//
+//            }else if (type[0]=='{'){
+//                objc_msgSend_stret(sender, method_getName([[methodDict objectForKey:methodKey] pointerValue]));
+//            }else{
+//                objc_msgSend_fpret(sender, method_getName([[methodDict objectForKey:methodKey] pointerValue]));
+//            }
+//        
+//        }
     }
-    
     
 }
 
@@ -193,5 +217,6 @@ static NSString *methodType =@"type";
         return methodsNames;
     }else return filteredArray;
 }
+
 
 @end

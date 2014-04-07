@@ -10,11 +10,11 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 #import "NSObject+object_print.h"
+#import "MPMessageSenderViewController.h"
+#import "UIAlertView+blocks.h"
 
-typedef enum : NSUInteger {
-    MPClassMethod,
-    MPInstanceMethod,
-} MPMethodType;
+
+
 
 @interface MPMethodsListViewController : MPViewController<UISearchBarDelegate,UISearchDisplayDelegate>{
     
