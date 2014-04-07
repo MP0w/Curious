@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DE2A263118F33E5000A57B5B /* MPMessageSenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2A262E18F33E5000A57B5B /* MPMessageSenderViewController.m */; };
 		DE2A263218F33E5000A57B5B /* UIAlertView+blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2A263018F33E5000A57B5B /* UIAlertView+blocks.m */; };
+		DE2A263618F33F5E00A57B5B /* MPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2A263518F33F5E00A57B5B /* MPViewController.m */; };
 		DEA0341F18E8740500F031D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA0341E18E8740500F031D5 /* Foundation.framework */; };
 		DEA0342118E8740500F031D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA0342018E8740500F031D5 /* CoreGraphics.framework */; };
 		DEA0342318E8740500F031D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA0342218E8740500F031D5 /* UIKit.framework */; };
@@ -17,7 +18,6 @@
 		DEA0342F18E8740500F031D5 /* MPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0342E18E8740500F031D5 /* MPAppDelegate.m */; };
 		DEA0343218E8740500F031D5 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA0343018E8740500F031D5 /* Main_iPhone.storyboard */; };
 		DEA0343518E8740500F031D5 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA0343318E8740500F031D5 /* Main_iPad.storyboard */; };
-		DEA0343818E8740500F031D5 /* MPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0343718E8740500F031D5 /* MPViewController.m */; };
 		DEA0343A18E8740500F031D5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA0343918E8740500F031D5 /* Images.xcassets */; };
 		DEA0344118E8740500F031D5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA0344018E8740500F031D5 /* XCTest.framework */; };
 		DEA0344218E8740500F031D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA0341E18E8740500F031D5 /* Foundation.framework */; };
@@ -50,6 +50,8 @@
 		DE2A262E18F33E5000A57B5B /* MPMessageSenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMessageSenderViewController.m; sourceTree = "<group>"; };
 		DE2A262F18F33E5000A57B5B /* UIAlertView+blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+blocks.h"; sourceTree = "<group>"; };
 		DE2A263018F33E5000A57B5B /* UIAlertView+blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+blocks.m"; sourceTree = "<group>"; };
+		DE2A263418F33F5E00A57B5B /* MPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPViewController.h; sourceTree = "<group>"; };
+		DE2A263518F33F5E00A57B5B /* MPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPViewController.m; sourceTree = "<group>"; };
 		DEA0341B18E8740500F031D5 /* CuriosInspectorTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuriosInspectorTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA0341E18E8740500F031D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DEA0342018E8740500F031D5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,8 +64,6 @@
 		DEA0342E18E8740500F031D5 /* MPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPAppDelegate.m; sourceTree = "<group>"; };
 		DEA0343118E8740500F031D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		DEA0343418E8740500F031D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		DEA0343618E8740500F031D5 /* MPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPViewController.h; sourceTree = "<group>"; };
-		DEA0343718E8740500F031D5 /* MPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPViewController.m; sourceTree = "<group>"; };
 		DEA0343918E8740500F031D5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DEA0343F18E8740500F031D5 /* CuriosInspectorTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CuriosInspectorTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA0344018E8740500F031D5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -115,6 +115,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE2A263318F33EE800A57B5B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				DE2A262F18F33E5000A57B5B /* UIAlertView+blocks.h */,
+				DE2A263018F33E5000A57B5B /* UIAlertView+blocks.m */,
+				DEA0347118EA081600F031D5 /* NSObject+object_print.h */,
+				DEA0347218EA081600F031D5 /* NSObject+object_print.m */,
+				DEA0345C18E874B200F031D5 /* UIView+Frame.h */,
+				DEA0345D18E874B200F031D5 /* UIView+Frame.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		DEA0341218E8740500F031D5 = {
 			isa = PBXGroup;
 			children = (
@@ -153,8 +166,6 @@
 				DEA0342E18E8740500F031D5 /* MPAppDelegate.m */,
 				DEA0343018E8740500F031D5 /* Main_iPhone.storyboard */,
 				DEA0343318E8740500F031D5 /* Main_iPad.storyboard */,
-				DEA0343618E8740500F031D5 /* MPViewController.h */,
-				DEA0343718E8740500F031D5 /* MPViewController.m */,
 				DEA0343918E8740500F031D5 /* Images.xcassets */,
 				DEA0342518E8740500F031D5 /* Supporting Files */,
 			);
@@ -195,20 +206,17 @@
 			children = (
 				DEA0345718E874B200F031D5 /* MPInspectorManager.h */,
 				DEA0345818E874B200F031D5 /* MPInspectorManager.m */,
+				DE2A263418F33F5E00A57B5B /* MPViewController.h */,
+				DE2A263518F33F5E00A57B5B /* MPViewController.m */,
 				DEA0345918E874B200F031D5 /* MPInspectorViewController.h */,
 				DEA0345A18E874B200F031D5 /* MPInspectorViewController.m */,
 				DEA0346E18E9EC0F00F031D5 /* MPMethodsListViewController.h */,
 				DEA0346F18E9EC0F00F031D5 /* MPMethodsListViewController.m */,
 				DE2A262D18F33E5000A57B5B /* MPMessageSenderViewController.h */,
 				DE2A262E18F33E5000A57B5B /* MPMessageSenderViewController.m */,
-				DE2A262F18F33E5000A57B5B /* UIAlertView+blocks.h */,
-				DE2A263018F33E5000A57B5B /* UIAlertView+blocks.m */,
-				DEA0347118EA081600F031D5 /* NSObject+object_print.h */,
-				DEA0347218EA081600F031D5 /* NSObject+object_print.m */,
+				DE2A263318F33EE800A57B5B /* Categories */,
 				DEA0346418E8AFC400F031D5 /* Cells */,
 				DEA0345B18E874B200F031D5 /* MPUtils.h */,
-				DEA0345C18E874B200F031D5 /* UIView+Frame.h */,
-				DEA0345D18E874B200F031D5 /* UIView+Frame.m */,
 			);
 			name = CuriousInspector;
 			path = ../CuriousInspector;
@@ -332,7 +340,6 @@
 				DEA0342B18E8740500F031D5 /* main.m in Sources */,
 				DEA0345F18E874B200F031D5 /* MPInspectorViewController.m in Sources */,
 				DE2A263118F33E5000A57B5B /* MPMessageSenderViewController.m in Sources */,
-				DEA0343818E8740500F031D5 /* MPViewController.m in Sources */,
 				DEA0347318EA081600F031D5 /* NSObject+object_print.m in Sources */,
 				DEA0345E18E874B200F031D5 /* MPInspectorManager.m in Sources */,
 				DEA0347018E9EC0F00F031D5 /* MPMethodsListViewController.m in Sources */,
@@ -340,6 +347,7 @@
 				DEA0346318E8AFC100F031D5 /* MPObjectTableViewCell.m in Sources */,
 				DEA0346A18E8AFEE00F031D5 /* MPMethodTableViewCell.m in Sources */,
 				DEA0346D18E8B30900F031D5 /* MPTableViewCell.m in Sources */,
+				DE2A263618F33F5E00A57B5B /* MPViewController.m in Sources */,
 				DEA0342F18E8740500F031D5 /* MPAppDelegate.m in Sources */,
 				DE2A263218F33E5000A57B5B /* UIAlertView+blocks.m in Sources */,
 			);
