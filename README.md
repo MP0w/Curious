@@ -1,5 +1,7 @@
 Curious
 ==========
+UPDATE: it's long time that I don't touch, seems that someone build something similar but I don't find it anymore.  
+
 The idea behind this tool is to provide a simple way to inspect your iOS Apps hierarchy directly inside your App. 
 You are able to navigate from your main UIWindow inside your UINavigationController or UITabbarController or UIVIewController to discover all your UIViews and their subviews hierarchy.
 
